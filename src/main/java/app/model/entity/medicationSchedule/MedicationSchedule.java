@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import app.model.entity.medication.Medication;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.UUID;
@@ -35,4 +36,10 @@ public class MedicationSchedule {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AdministrationStatus status;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal amount;
+
+    @Column(nullable = false)
+    private Dosage dosage;
 }

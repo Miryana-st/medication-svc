@@ -26,8 +26,7 @@ public class MedicationService {
 
             Medication medication = medicationOptional.get();
 
-            medication.setMedicationDosage(medicationRequest.getMedicationDosage());
-            medication.setMedicationUnit(medicationRequest.getMedicationUnit());
+            medication.setMedicationConcentrationMg(medicationRequest.getMedicationConcentrationMg());
             medication.setMedicationFrequency(medicationRequest.getMedicationFrequency());
             medication.setEndDate(medicationRequest.getEndDate());
             medication.setStartDate(medicationRequest.getStartDate());
@@ -38,8 +37,7 @@ public class MedicationService {
         Medication medication = Medication.builder()
                 .dogId(medicationRequest.getDogId())
                 .name(medicationRequest.getName())
-                .medicationDosage(medicationRequest.getMedicationDosage())
-                .medicationUnit(medicationRequest.getMedicationUnit())
+                .medicationConcentrationMg(medicationRequest.getMedicationConcentrationMg())
                 .medicationFrequency(medicationRequest.getMedicationFrequency())
                 .startDate(medicationRequest.getStartDate())
                 .endDate(medicationRequest.getEndDate())
@@ -47,7 +45,6 @@ public class MedicationService {
 
         return medicationRepository.save(medication);
     }
-
 
     public List<Medication> getAllMedicationsByDogId(UUID dogId) {
 

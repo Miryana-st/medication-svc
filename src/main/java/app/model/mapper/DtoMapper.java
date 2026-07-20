@@ -13,8 +13,7 @@ public class DtoMapper {
                 .name(medication.getName())
                 .startDate(medication.getStartDate())
                 .endDate(medication.getEndDate())
-                .medicationDosage(medication.getMedicationDosage())
-                .medicationUnit(medication.getMedicationUnit())
+                .medicationConcentrationMg(medication.getMedicationConcentrationMg())
                 .medicationFrequency(medication.getMedicationFrequency())
                 .build();
     }

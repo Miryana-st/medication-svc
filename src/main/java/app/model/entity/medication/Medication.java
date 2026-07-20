@@ -33,10 +33,7 @@ public class Medication {
     private LocalDate endDate;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal medicationDosage;
-
-    @Enumerated(EnumType.STRING)
-    private MedicationUnit medicationUnit;
+    private BigDecimal medicationConcentrationMg;
 
     @Column(nullable = false)
     private String medicationFrequency;

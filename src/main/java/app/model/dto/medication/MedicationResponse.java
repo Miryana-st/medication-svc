@@ -3,7 +3,6 @@ package app.model.dto.medication;
 import lombok.Builder;
 import lombok.Data;
 import app.model.entity.medication.MedicationName;
-import app.model.entity.medication.MedicationUnit;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -18,9 +17,7 @@ public class MedicationResponse {
 
     private LocalDate endDate;
 
-    private BigDecimal medicationDosage;
-
-    private MedicationUnit medicationUnit;
+    private BigDecimal medicationConcentrationMg;
 
     private String medicationFrequency;
 }

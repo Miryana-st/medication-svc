@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import app.model.entity.medication.MedicationName;
-import app.model.entity.medication.MedicationUnit;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -32,10 +31,7 @@ public class MedicationRequest {
 
     @Positive
     @NotNull
-    private BigDecimal medicationDosage;
-
-    @NotNull
-    private MedicationUnit medicationUnit;
+    private BigDecimal medicationConcentrationMg;
 
     @NotNull
     private String medicationFrequency;
