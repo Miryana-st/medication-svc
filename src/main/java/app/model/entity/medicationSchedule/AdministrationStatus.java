@@ -1,4 +1,4 @@
-package model.entity.medicationSchedule;
+package app.model.entity.medicationSchedule;
 
 public enum AdministrationStatus {
     PENDING("Pending"),

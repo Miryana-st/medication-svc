@@ -1,4 +1,4 @@
-package model.entity.medication;
+package app.model.entity.medication;
 
 public enum MedicationName {
     PHENOBARBITAL("Phenobarbital"),

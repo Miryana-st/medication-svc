@@ -1,10 +1,13 @@
-package model.entity.medication;
+package app.model.dto.medication;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import app.model.entity.medication.MedicationName;
+import app.model.entity.medication.MedicationUnit;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,30 +17,26 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "medications")
-public class Medication {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class MedicationRequest {
 
-    @Column(nullable = false)
+    @NotNull
     private UUID dogId;
 
-    @Enumerated(EnumType.STRING)
+    @NotNull
     private MedicationName name;
 
-    @Column(nullable = false)
+    @NotNull
     private LocalDate startDate;
 
     private LocalDate endDate;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Positive
+    @NotNull
     private BigDecimal medicationDosage;
 
-    @Enumerated(EnumType.STRING)
+    @NotNull
     private MedicationUnit medicationUnit;
 
-    @Column(nullable = false)
+    @NotNull
     private String medicationFrequency;
 }

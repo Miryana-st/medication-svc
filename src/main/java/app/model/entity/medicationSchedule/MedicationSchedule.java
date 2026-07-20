@@ -1,11 +1,11 @@
-package model.entity.medicationSchedule;
+package app.model.entity.medicationSchedule;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import model.entity.medication.Medication;
+import app.model.entity.medication.Medication;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
