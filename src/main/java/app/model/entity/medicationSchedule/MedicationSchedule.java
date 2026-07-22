@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import app.model.entity.medication.Medication;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.UUID;
 
@@ -23,19 +22,15 @@ public class MedicationSchedule {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
+    private UUID dogId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medication_id", nullable = false)
     private Medication medication;
 
     @Column(nullable = false)
-    private LocalDate administrationDate;
-
-    @Column(nullable = false)
     private LocalTime administrationTime;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private AdministrationStatus status;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;

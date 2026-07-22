@@ -1,5 +1,6 @@
 package app.service.medication;
 
+import app.exceptions.MedicationScheduleNotFoundException;
 import app.model.dto.medication.MedicationRequest;
 import app.model.entity.medication.Medication;
 import org.springframework.stereotype.Service;
@@ -59,4 +60,9 @@ public class MedicationService {
             }
         }
     }
+
+    public Medication getMedicationById(UUID medicationId) {
+        return medicationRepository.findById(medicationId).orElseThrow(() -> new MedicationScheduleNotFoundException("Medication not found"));
+    }
+
 }
